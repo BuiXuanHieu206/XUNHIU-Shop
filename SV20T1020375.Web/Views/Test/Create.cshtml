@@ -1,0 +1,40 @@
+﻿@model SV20T1020375.Web.Models.Person
+@{
+
+}
+
+<div class="box box-primary">
+    <div class="box-body">
+        <form action="~/Test/Save" method="post">
+
+            <div class="form-group">
+                <label>Tên:</label>
+                <input name="@nameof(Model.Name)" type="text" class="form-control" autofocus value="@Model.Name">
+            </div>
+
+            <div class="form-group">
+                <label>Ngày sinh:</label>
+                <input name="@nameof(Model.Birthday)" type="hidden" value="@Model.Birthday">
+                <input name="BirthdayInput" type="text" 
+                            class="form-control" 
+                            value="@Model.Birthday.ToString("dd/MM/yyyy", new System.Globalization.CultureInfo("en-GB"))">
+            </div>
+
+            <div class="form-group">
+                <label>Lương:</label>
+                <input name="@nameof(Model.Salary)" type="text" class="form-control" value="@Model.Salary">
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fa fa-floppy-o"></i>
+                    Lưu dữ liệu
+                </button>
+
+                <a href="~/Shipper" class="btn btn-default">
+                    Quay lại
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
